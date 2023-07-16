@@ -1,6 +1,8 @@
 package net.UnPainPerdu.inhuman;
 
 import com.mojang.logging.LogUtils;
+import net.UnPainPerdu.inhuman.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,6 +25,9 @@ public class Inhuman{
     public Inhuman(){
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        //enregistre les items moddés
+        ModItems.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
@@ -37,6 +42,9 @@ public class Inhuman{
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.COEUR_DE_DRAGON);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
