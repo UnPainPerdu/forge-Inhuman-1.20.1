@@ -1,6 +1,8 @@
 package net.UnPainPerdu.inhuman;
 
 import com.mojang.logging.LogUtils;
+import net.UnPainPerdu.inhuman.block.ModBlocks;
+import net.UnPainPerdu.inhuman.item.ModCreativeModTabs;
 import net.UnPainPerdu.inhuman.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -25,8 +27,13 @@ public class Inhuman{
     public Inhuman(){
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        //enregistre le tab suppl
+        ModCreativeModTabs.register(modEventBus);
+
         //enregistre les items moddés
         ModItems.register(modEventBus);
+        //enregistre les blocs moddés
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
