@@ -1,6 +1,7 @@
 package net.UnPainPerdu.inhuman.item;
 
 import net.UnPainPerdu.inhuman.Inhuman;
+import net.UnPainPerdu.inhuman.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,7 +23,7 @@ public class ModCreativeModTabs {
                         //rajout item moddé
                         pOutput.accept(ModItems.COEUR_DE_DRAGON.get());
                         //rajout bloc moddé
-                        //pOutput.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
+                        pOutput.accept(ModBlocks.DRACONIC_ALTAR.get());
 
                     })
                     .build());

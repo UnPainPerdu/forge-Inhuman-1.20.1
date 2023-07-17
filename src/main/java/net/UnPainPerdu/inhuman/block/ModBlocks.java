@@ -1,6 +1,7 @@
 package net.UnPainPerdu.inhuman.block;
 
 import net.UnPainPerdu.inhuman.Inhuman;
+import net.UnPainPerdu.inhuman.block.custom.DraconicAltar;
 import net.UnPainPerdu.inhuman.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -18,9 +19,11 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Inhuman.MOD_ID);
+
+    public static final RegistryObject<Block> DRACONIC_ALTAR = registerBlock("draconic_altar",
+            () -> new DraconicAltar(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).noOcclusion().strength(1.5f).requiresCorrectToolForDrops()));
+                            //copie le comportement de la pierre, le bruit et affiche les blocs derrère si transparence
     /*
-    public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
     public static final RegistryObject<Block> RAW_SAPPHIRE_BLOCK = registerBlock("raw_sapphire_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
     */
