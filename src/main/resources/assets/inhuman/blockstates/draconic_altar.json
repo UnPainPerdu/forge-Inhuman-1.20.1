@@ -1,5 +1,6 @@
 {
-  "variants": {
-    "": {"model":  "inhuman:block/draconic_altar"}
-  }
+    "variants": {
+      "half=lower": {"model":  "inhuman:block/draconic_altar_bottom"},
+      "half=upper": {"model":  "inhuman:block/draconic_altar_upper"}
+    }
 }
