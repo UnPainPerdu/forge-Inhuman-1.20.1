@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "minecraft:smooth_stone_slab"
+    },
+    "B": {
+      "tag": "forge:stone"
+    },
+    "C": {
+      "item": "minecraft:cobbled_deepslate"
+    }
+  },
+  "pattern": [
+    "A",
+    "B",
+    "C"
+  ],
+  "result": {
+    "item": "inhuman:draconic_altar"
+  }
+}
